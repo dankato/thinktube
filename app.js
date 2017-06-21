@@ -8,6 +8,8 @@ const appState = {
     results: [],
 }
 
+// https://www.googleapis.com/youtube/v3/search/?part=snippet&key=AIzaSyAPlQikl1ZdGR3LM-HUEAI9qNffh06jFPU&q=javascript
+
 // state mod functions
 
 // getting data from api
@@ -22,7 +24,9 @@ function getData(searchTerm, callback) {
 }
 
 // push
-
+const pushData = (appState, data) => {
+    appState.results.push(data);
+};
 
 // play
 
@@ -31,10 +35,18 @@ function getData(searchTerm, callback) {
 const render = (state) => {};
 
 // event handler
-
+$('.js-search-form').on('submit', (event) => {
+    event.preventDefault();
+    const getInput = $(event.target).find('input').val();
+        console.log("user submitted: " + getInput);
+  //  getData(getInput, something else)    
+})
 
 // execute
 
 
 
 // Find thumbnails -> items.snippet.thumbnails.medium.url
+
+
+// 'maxResults': '25'
