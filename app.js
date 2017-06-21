@@ -8,7 +8,7 @@ const appState = {
     results: [],
 }
 
-// https://www.googleapis.com/youtube/v3/search/?part=snippet&key=AIzaSyAPlQikl1ZdGR3LM-HUEAI9qNffh06jFPU&q=javascript
+// https://www.googleapis.com/youtube/v3/search/?part=snippet&key=AIzaSyBlKXL_oW-vqf4DFrs6dov1ddwSt6fyscI&q=javascript
 
 // state mod functions
 
@@ -17,7 +17,7 @@ function getData(searchTerm, callback) {
     const url = "https://www.googleapis.com/youtube/v3/search";
     const query = {
         part: 'snippet',
-        key: 'AIzaSyAPlQikl1ZdGR3LM-HUEAI9qNffh06jFPU',
+        key: 'AIzaSyBlKXL_oW-vqf4DFrs6dov1ddwSt6fyscI',
         q: searchTerm,
     }
     $.getJSON(URL, query, callback);
