@@ -48,9 +48,11 @@ const render = (appState) => {
     console.log('search results:' + searchResults);
     appState.results.forEach(function (items) {
         console.log($(items))
-        searchResults += `<h4>${items.snippet.title}</h4>
+        searchResults += `<h3>${items.snippet.title}</h3>
         <a class="link" href="https://www.youtube.com/watch?v=${items.id.videoId}">
      <img class="thumbnail" src=${items.snippet.thumbnails.medium.url}></a>
+        <br>
+        <a class="link" href="https://www.youtube.com/channel/${items.snippet.channelId}">More from the ${items.snippet.channelTitle} Channel</a>
         `});
     $('.js-search-results').html(searchResults)
 };
